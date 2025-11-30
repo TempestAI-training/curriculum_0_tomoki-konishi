@@ -1,7 +1,9 @@
 import logo from './logo.svg';
+import { useState } from "react";
 import './App.css';
 
 function App() {
+  const [isVisible, setIsVisible] = useState(true);
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +21,15 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+     
+      <button onClick={() => setIsVisible(!isVisible)}>
+  Toggle Text
+</button>
+{isVisible && <p>このテキストが表示/非表示されます</p>}
+ </header>
     </div>
+    
+    
   );
 }
 
