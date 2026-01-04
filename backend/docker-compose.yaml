@@ -1,0 +1,10 @@
+services:
+  demo-app:
+    build: .
+    volumes:
+      - .:/src
+    ports:
+      - 8000:8000
+    # .envファイルを読み込み、コンテナ内の環境変数として使用する
+    env_file:
+      - .env
