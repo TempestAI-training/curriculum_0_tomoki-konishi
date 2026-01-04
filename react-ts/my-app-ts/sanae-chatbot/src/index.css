@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+.chat-container {
+
+  width: 90%;          /* スマホなど狭い画面では画面の90%を使う */
+  max-width: 600px;    /* どんなに画面が広くても、600px以上は広がらない */
+  margin: 40px auto;   /* 上下に40pxの隙間、左右は自動で均等（＝中央寄せ） */
+
+  border: 1px solid #ccc; /* 薄いグレーの枠線をつける */
+  padding: 20px;          /* 内側に余白を作る */
+  border-radius: 8px;     /* 角を少し丸くする */
+  background-color: #f9f9f9; /* 背景を薄いグレーにする */
+}
+
+/* --- ここから下を追記 --- */
+
+/* 共通のメッセージ行の設定 */
+.message-right, .message-left {
+  margin-bottom: 10px; /* メッセージごとの間隔 */
+  display: flex;       /* 中身の配置を自由にするモード */
+}
+
+/* ユーザー（右側）の設定 */
+.message-right {
+  justify-content: flex-end; /* 右端に寄せる */
+}
+
+/* ボット（左側）の設定 */
+.message-left {
+  justify-content: flex-start; /* 左端に寄せる */
+}
+
+/* 吹き出し自体のデザイン */
+.message-bubble {
+  padding: 10px 15px;      /* 文字の周りの余白 */
+  border-radius: 15px;     /* 丸っこくする */
+  max-width: 70%;          /* 横幅は最大でも7割まで */
+  word-wrap: break-word;   /* 長い文字は折り返す */
+}
+
+/* ユーザーの吹き出しの色（緑っぽい色） */
+.message-right .message-bubble {
+  background-color: #dcf8c6; 
+  color: black;
+}
+
+/* ボットの吹き出しの色（白っぽい色） */
+.message-left .message-bubble {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  color: black;
+}

@@ -1,0 +1,22 @@
+
+
+services:
+  db:
+    container_name: mysql-task-db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/x86_64
+    ports:
+      - "3306:3306"
+    env_file:
+      - .env
+    volumes:
+      # DBの中身をホスト側に永続化
+      - db-data:/var/lib/mysql
+      # 起動時に実行してほしいSQLファイルをマウント
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  db-data:
+    name: mysql-task-db-data
