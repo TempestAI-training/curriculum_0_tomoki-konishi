@@ -92,7 +92,7 @@ const ChatPage = (props: Props) => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="質問を入力してね"
+            placeholder="質問を入力してください。"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             disabled={isLoading}
