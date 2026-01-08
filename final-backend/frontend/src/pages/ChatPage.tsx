@@ -21,6 +21,7 @@ const ChatPage = (props: Props) => {
   const [inputText, setInputText] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
   // 送信ボタンを押したときの関数
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,12 +39,11 @@ const ChatPage = (props: Props) => {
 
     try {
       // バックエンドへの送信 (ポート8000)
-      const response = await fetch("finalbackend-konishi-fsdqc8gkgrevc4bh.japanwest-01.azurewebsites.net", {
+      const response = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: messageToSend }),
       });
-
       if (!response.ok) throw new Error("API error");
 
       // AIの返答を追加
