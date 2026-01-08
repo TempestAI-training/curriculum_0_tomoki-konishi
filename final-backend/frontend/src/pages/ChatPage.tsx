@@ -21,7 +21,8 @@ const ChatPage = (props: Props) => {
   const [inputText, setInputText] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+  const API_URL = process.env.REACT_APP_API_URL 
+
   // 送信ボタンを押したときの関数
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
