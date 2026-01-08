@@ -38,7 +38,7 @@ const ChatPage = (props: Props) => {
 
     try {
       // バックエンドへの送信 (ポート8000)
-      const response = await fetch("http://localhost:8000/chat", {
+      const response = await fetch("finalbackend-konishi-fsdqc8gkgrevc4bh.japanwest-01.azurewebsites.net", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: messageToSend }),
