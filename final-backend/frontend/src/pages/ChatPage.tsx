@@ -22,7 +22,7 @@ const ChatPage = (props: Props) => {
   const [inputText, setInputText] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL 
+  const API_URL = "https://finalbackend-konishi-fsdqc8gkgrevc4bh.japanwest-01.azurewebsites.net";
 
   // 送信ボタンを押したときの関数
   const handleSubmit = async (e: React.FormEvent) => {
