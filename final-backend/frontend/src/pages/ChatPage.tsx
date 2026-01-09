@@ -12,6 +12,7 @@ interface Message {
 
 interface APIResponse {
   reply: string;
+  
 }
 
 // --- コンポーネント本体 ---
